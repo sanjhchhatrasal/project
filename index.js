@@ -7,8 +7,8 @@ const app = express();
 
 const logger = pino(
   pinoLoki({
-    // host: "https://tcplusdev-otel.shl.zone/loki/api/v1/push",
-    host: "http://10.112.1.113:3100/loki/api/v1/push",
+    host: "http://loki:3100/loki/api/v1/push",
+    // host: "http://10.112.1.113:3100/loki/api/v1/push",
     interval: 2,
     labels: { app: 'status-app' },
   })
