@@ -9,8 +9,8 @@ services:
     environment:
       LOKI_HOST: "http://loki:3100/loki/api/v1/push"
     networks:
-      - observability-net  # this is the external network
+      - logging_default  # this is the external network
 
 networks:
-  observability-net:
+  logging_default:
     external: true
