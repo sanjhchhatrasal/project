@@ -1,10 +1,19 @@
 version: '3.9'
 
 services:
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+
   app:
     build: .
     container_name: status-app
     ports:
       - "8877:8877"
+    depends_on:
+      - loki
     environment:
-      LOKI_HOST: "http://host.docker.internal:3100/loki/api/v1/push"
+      LOKI_HOST: "http://loki:3100/loki/api/v1/push"
