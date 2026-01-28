@@ -7,4 +7,4 @@ services:
     ports:
       - "8877:8877"
     environment:
-      LOKI_HOST: "http://loki:3100/loki/api/v1/push"
+      LOKI_HOST: "http://host.docker.internal:3100/loki/api/v1/push"
