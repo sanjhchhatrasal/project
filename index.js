@@ -7,6 +7,7 @@ const app = express();
 const logger = pino(
   pinoLoki({
     host: "http://10.112.1.113:3100/loki/loki/api/v1/push", // include the extra /loki
+    grpc: "http://10.112.1.113:9095/loki/loki/api/v1/push/",
     interval: 2,
     labels: { app: 'status-app' },
   })
