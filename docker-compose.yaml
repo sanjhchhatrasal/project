@@ -7,7 +7,7 @@ services:
     ports:
       - "8877:8877"
     environment:
-      LOKI_HOST: "http://loki:3100/loki/api/v1/push"
+      LOKI_HOST: "https://loki:3100/loki/api/v1/push"
     networks:
       - logging_default  # this is the external network
 
