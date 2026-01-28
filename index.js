@@ -6,11 +6,12 @@ const app = express();
 
 const logger = pino(
   pinoLoki({
-    host: "http://10.112.1.113:3100/loki/loki/api/v1/push",
-    interval: 2, 
+    host: "http://10.112.1.113:3100/loki/loki/api/v1/push", // include the extra /loki
+    interval: 2,
     labels: { app: 'status-app' },
   })
 );
+
 
 function getRandomStatus() {
   const statuses = [200, 201, 202, 400, 401, 403, 404, 500, 502, 503];
