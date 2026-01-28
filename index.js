@@ -6,7 +6,7 @@ const app = express();
 
 const logger = pino(
   pinoLoki({
-    host: "https://tcplusdev-otel.shl.zone/loki/api/v1/push",
+    host: "http://localhost:3100/loki/loki/api/v1/push",
     interval: 2,
     labels: { app: 'status-app' },
   })
