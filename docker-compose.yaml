@@ -6,7 +6,5 @@ services:
     container_name: status-app
     ports:
       - "8877:8877"
-    depends_on:
-      - loki
     environment:
       LOKI_HOST: "http://loki:3100/loki/api/v1/push"
