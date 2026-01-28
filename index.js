@@ -1,6 +1,6 @@
 const express = require('express');
 const pino = require('pino');
-const pinoLoki = require('pino-loki');
+const pinoLoki = require('pino-loki').default;
 
 const app = express();
 
